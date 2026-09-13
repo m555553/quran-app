@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدقة جارية - قرآن كريم وأذكار</title>
+    <!-- استدعاء خط عربي أنيق من جوجل -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #090d16 0%, #111827 50%, #0f172a 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .wrapper {
+            max-width: 650px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #38bdf8);
+        }
+        .dedication {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.6), rgba(2, 132, 199, 0.5));
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 5px;
+            box-shadow: inset 0 1px 3px rgba(255,255,255,0.1);
+        }
+        .dedication h2 {
+            font-size: 18px;
+            color: #38bdf8;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .names {
+            font-size: 16px;
+            color: #fef08a;
+            font-weight: 700;
+            margin: 8px 0;
+            letter-spacing: 0.5px;
+        }
+        .dedication p {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin-top: 6px;
+        }
+        .section-title {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+        .quran-box {
+            font-family: 'Amiri', serif;
+            font-size: 26px;
+            line-height: 2.2;
+            color: #fef08a;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px dashed rgba(254, 240, 138, 0.2);
+            border-radius: 14px;
+            padding: 20px;
+            min-height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .surah-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+        .counter-display {
+            font-size: 48px;
+            font-weight: 700;
+            color: #38bdf8;
+            margin: 10px 0;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+        .dhikr-text {
+            font-size: 22px;
+            color: #f8fafc;
+            font-family: 'Amiri', serif;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        button {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+            flex: 1;
+        }
+        button:hover {
+            background: linear-gradient(135deg, #0369a1, #075985);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(2, 132, 199, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .btn-secondary {
+            background: rgba(51, 65, 85, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .btn-secondary:hover {
+            background: rgba(71, 85, 105, 1);
+        }
+        .btn-accent {
+            background: linear-gradient(135deg, #0f766e, #115e59);
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+        }
+        .btn-accent:hover {
+            background: linear-gradient(135deg, #115e59, #134e4a);
+        }
+        footer {
+            text-align: center;
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 10px;
+            line-height: 1.8;
+        }
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        footer a:hover {
+            color: #7dd3fc;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- بطاقة الإهداء -->
+        <div class="card">
+            <div class="dedication">
+                <h2>✨ صدقة جارية ✨</h2>
+                <p>على روح المرحومين بإذن الله تعالى:</p>
+                <div class="names">إسلام كمال سلامة &bull; كريم عمرو إسماعيل</div>
+                <p>اللهم اغفر لهما وارحمهما، واجعل قبريهما روضة من رياض الجنة.</p>
+            </div>
+        </div>
+
+        <!-- بطاقة القرآن الكريم -->
+        <div class="card">
+            <div class="section-title">📖 من كتاب الله العزيز</div>
+            <div class="surah-badge" id="surahName">سورة الفاتحة</div>
+            <div class="quran-box" id="quranText">
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ (1) الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ (2) الرَّحْمَٰنِ الرَّحِيمِ (3) مَالِكِ يَوْمِ الدِّينِ (4)
+            </div>
+            <div class="btn-group">
+                <button onclick="nextAyah()">التالي من السور</button>
+            </div>
+        </div>
+
+        <!-- بطاقة التسبيح والأذكار -->
+        <div class="card">
+            <div class="section-title">📿 الذاكرة الإلكترونية للتسبيح</div>
+            <div class="dhikr-text" id="dhikrTitle">سُبْحَانَ اللَّهِ</div>
+            <div class="counter-display" id="counterValue">0</div>
+            
+            <div class="btn-group">
+                <button onclick="incrementCounter()">تسبيح</button>
+                <button class="btn-secondary" onclick="resetCounter()">تصفير</button>
+            </div>
+            <div class="btn-group" style="margin-top: 10px;">
+                <button class="btn-accent" onclick="changeDhikr()">تغيير الذكر</button>
+            </div>
+        </div>
+
+        <footer>
+            نسألكم الدعاء لهما بالرحمة والمغفرة<br>
+            تصميم وتطوير: <a href="https://www.facebook.com/share/1844b35s3Y/" target="_blank">محمد عمرو</a>
+        </footer>
+    </div>
+
+    <script>
+        const quranData = [
+            {
+                surah: "سورة الفاتحة",
+                text: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ (1) الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ (2) الرَّحْمَٰنِ الرَّحِيمِ (3) مَالِكِ يَوْمِ الدِّينِ (4)"
+            },
+            {
+                surah: "سورة الإخلاص",
+                text: "قُلْ هُوَ اللَّهُ أَحَدٌ (1) اللَّهُ الصَّمَدُ (2) لَمْ يَلِدْ وَلَمْ يُولَدْ (3) وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ (4)"
+            },
+            {
+                surah: "سورة الفلق",
+                text: "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ (1) مِن شَرِّ مَا خَلَقَ (2) وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ (3) وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ (4)"
+            },
+            {
+                surah: "سورة الناس",
+                text: "قُلْ أَعُوذُ بِرَبِّ النَّاسِ (1) مَلِكِ النَّاسِ (2) إِلَٰهِ النَّاسِ (3) مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ (4)"
+            }
+        ];
+
+        let currentAyahIndex = 0;
+
+        function nextAyah() {
+            currentAyahIndex = (currentAyahIndex + 1) % quranData.length;
+            document.getElementById("surahName").innerText = quranData[currentAyahIndex].surah;
+            document.getElementById("quranText").innerText = quranData[currentAyahIndex].text;
+        }
+
+        const dhikrs = [
+            "سُبْحَانَ اللَّهِ",
+            "الْحَمْدُ لِلَّهِ",
+            "لَا إِلَهَ إِلَّا اللَّهُ",
+            "اللَّهُ أَكْبَرُ",
+            "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
+            "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+            "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ وَأَتُوبُ إِلَيْهِ"
+        ];
+
+        let currentDhikrIndex = 0;
+        let counter = 0;
+
+        function incrementCounter() {
+            counter++;
+            document.getElementById("counterValue").innerText = counter;
+        }
+
+        function resetCounter() {
+            counter = 0;
+            document.getElementById("counterValue").innerText = counter;
+        }
+
+        function changeDhikr() {
+            currentDhikrIndex = (currentDhikrIndex + 1) % dhikrs.length;
+            document.getElementById("dhikrTitle").innerText = dhikrs[currentDhikrIndex];
+            resetCounter();
+        }
+    </script>
+
+</body>
+</html>
